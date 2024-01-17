@@ -58,7 +58,7 @@ if uploaded_file:
     df = load_data(uploaded_file)
 
 # openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password")
-openai_api_key= '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'
+openai_api_key= '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'
 if "messages" not in st.session_state or st.sidebar.button("Clear conversation history"):
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
