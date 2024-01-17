@@ -1,7 +1,9 @@
 from langchain.agents import AgentType
-from langchain.agents import create_pandas_dataframe_agent
+#from langchain.agents import create_pandas_dataframe_agent
+from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
 from langchain.callbacks import StreamlitCallbackHandler
-from langchain.chat_models import ChatOpenAI
+#from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 import streamlit as st
 import pandas as pd
 import os
@@ -55,7 +57,8 @@ if not uploaded_file:
 if uploaded_file:
     df = load_data(uploaded_file)
 
-openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password")
+# openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password")
+openai_api_key= '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'
 if "messages" not in st.session_state or st.sidebar.button("Clear conversation history"):
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
